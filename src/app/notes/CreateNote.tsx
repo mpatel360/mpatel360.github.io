@@ -20,7 +20,7 @@ export default function CreateNote() {
   }
 
   return (
-    <form action="submit" onSubmit={create}>
+    <form onSubmit={create}>
       <h3>Create a new note</h3>
       <input
         type="text"
