@@ -1,4 +1,5 @@
 import styles from "../Notes.module.css";
+import { getNotes } from "../page";
 
 async function getNote(noteId: string) {
   const result = await fetch(
@@ -22,3 +23,20 @@ export default async function NotePage({ params }: any) {
     </div>
   );
 }
+
+// // This function gets called at build time on server-side.
+// // It won't be called on client-side, so you can even do
+// // direct database queries.
+// export async function generateStaticParams() {
+//   // Call an external API endpoint to get posts.
+//   // You can use any data fetching library
+//   const notes = await getNotes();
+
+//   // By returning { props: { posts } }, the Blog component
+//   // will receive `posts` as a prop at build time
+//   return {
+//     props: {
+//       notes,
+//     },
+//   };
+// }
