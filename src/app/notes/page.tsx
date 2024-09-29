@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./Notes.module.css";
 import CreateNote from "./CreateNote";
 
-export async function getNotes() {
+async function getNotes() {
   const result = await fetch(
     `http://127.0.0.1:8090/api/collections/notes/records?page=1&perPage=100`,
     { cache: "no-store" }

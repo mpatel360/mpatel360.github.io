@@ -1,5 +1,4 @@
 import styles from "../Notes.module.css";
-import { getNotes } from "../page";
 
 async function getNote(noteId: string) {
   const result = await fetch(
@@ -10,9 +9,23 @@ async function getNote(noteId: string) {
   return data as any;
 }
 
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const result = await fetch(
+    `http://127.0.0.1:8090/api/collections/notes/records?page=1&perPage=100`,
+    { next: { revalidate: 10 } } // regenerate the page on the server if it's older than a certain number of seconds
+  );
+  const data = (await result.json()).items ?? ([] as any[]);
+
+  return data.map((note: any) => ({
+    id: note.id,
+  }));
+}
+
 export default async function NotePage({ params }: any) {
   console.log(params);
-  const { title, content, created } = await getNote(params.id);
+  const { id } = params;
+  const { title, content, created } = await getNote(id);
   return (
     <div>
       <h1>{title}</h1>
