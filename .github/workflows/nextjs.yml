@@ -25,19 +25,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  startBe:
-    runs-on: macos-latest
-    steps:
-      - name: Checkout for backend
-        uses: actions/checkout@v4
-      - name: Start Pocketbase
-        run: ${{ github.workspace }}/pocketbase serve
   # Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Start Pocketbase
+        run: ${{ github.workspace }}/pocketbase serve
       - name: Detect package manager
         id: detect-package-manager
         run: |
