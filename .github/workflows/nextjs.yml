@@ -28,6 +28,8 @@ jobs:
   startBe:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout for backend
+        uses: actions/checkout@v4
       - name: Start Pocketbase
         run: ${{ github.workspace }}/pocketbase serve
   # Build job
