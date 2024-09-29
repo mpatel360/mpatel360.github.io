@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Start Pocketbase
-        run: ${{ github.workspace }} serve
+        run: ${{ github.workspace }}/pocketbase serve
   # Build job
   build:
     runs-on: ubuntu-latest
