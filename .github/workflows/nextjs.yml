@@ -26,7 +26,7 @@ concurrency:
 
 jobs:
   startBe:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout for backend
         uses: actions/checkout@v4
