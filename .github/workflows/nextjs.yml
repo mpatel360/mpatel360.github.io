@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       pocketbase:
-        image: elastio/pocketbase:latest
+        image: elestio/pocketbase:latest
         ports:
           - 8090:8090
         env:
