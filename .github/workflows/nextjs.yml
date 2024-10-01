@@ -43,7 +43,7 @@ jobs:
         options: >-
           --health-cmd="curl -f http://localhost:8090/api/collections"
           --health-interval=5s
-          --health-timeout=3s
+          --health-timeout=8s
           --health-retries=3
 
     steps:
