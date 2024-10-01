@@ -14,7 +14,7 @@ on:
 
 env:
   EMAIL: ${{secrets.PB_ADMIN_EMAIL}}
-  PASSWORD: ${{secrets.PB_ADMIN_PASSWORD}}
+  ADMIN_PASSWORD: ${{secrets.PB_ADMIN_PASSWORD}}
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
