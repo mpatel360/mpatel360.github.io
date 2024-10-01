@@ -37,9 +37,6 @@ jobs:
         image: elestio/pocketbase:latest
         ports:
           - 8090:8090
-        env:
-          EMAIL: "$EMAIL"
-          PASSWORD: "$PASSWORD"
         options: >-
           --health-cmd="curl -f http://localhost:8090/api/collections"
           --health-interval=8s
